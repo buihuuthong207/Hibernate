@@ -11,8 +11,8 @@ import javax.persistence.Table;
 @Table(name="student")
 public class Student {
 	@Id
-	@Column
 	@GeneratedValue(strategy=GenerationType.AUTO) //for autonumber
+	@Column
 	private int studentId;
 	@Column
 	private String firstname;
@@ -20,16 +20,39 @@ public class Student {
 	private String lastname;
 	@Column
 	private int yearLevel;
+	@Column
+	private String address;
+	@Column
+	private double avgScore;
 	
 	public Student(){}
-	public Student(int studentId, String firstname, String lastname,
-			int yearLevel) {
+	
+	public Student(int studentId, String firstname, String lastname, int yearLevel, String address, double avgScore) {
 		super();
 		this.studentId = studentId;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.yearLevel = yearLevel;
+		this.address = address;
+		this.avgScore = avgScore;
 	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public double getAvgScore() {
+		return avgScore;
+	}
+
+	public void setAvgScore(double avgScore) {
+		this.avgScore = avgScore;
+	}
+
 	public int getStudentId() {
 		return studentId;
 	}

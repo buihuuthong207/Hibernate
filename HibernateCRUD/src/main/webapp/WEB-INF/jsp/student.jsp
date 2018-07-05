@@ -28,6 +28,15 @@
 			<td><form:input path="yearLevel"/></td>
 		</tr>
 		<tr>
+			<td>Address</td>
+			<td><form:input path="address"/></td>
+		</tr>
+		<tr>
+			<td>Score</td>
+			<td><form:input path="avgScore"/></td>
+		</tr>
+		
+		<tr>
 			<td colspan="2" >
 				<input type="Submit" name ="action" value="Add">
 				<input type="Submit" name ="action" value="Edit"> 
@@ -43,12 +52,16 @@
 	<th>First Name</th>
 	<th>Last Name</th>
 	<th>Year Level</th>
+	<th>Address</th>
+	<th>Score</th>
 	<c:forEach items="${studentList}" var="student">
 		<tr>
 			<td>${student.studentId}</td>
 			<td>${student.firstname}</td>
 			<td>${student.lastname}</td>
 			<td>${student.yearLevel}</td>
+			<td>${student.address}</td>
+			<td>${student.avgScore}</td>
 		</tr>
 	</c:forEach>
 </table>
